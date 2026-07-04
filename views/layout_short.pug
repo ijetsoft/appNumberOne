@@ -1,0 +1,22 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, viewport-fit=cover')
+    meta(name='description', content='Домашняя страница веб-разработчика Игоря Бутаковского: портфолио, опыт, проекты и контакты.')
+    meta(name='author', content='Игорь Бутаковский')
+    meta(name='robots', content='index, follow')
+    meta(name='theme-color', content='#111827')
+    meta(name='color-scheme', content='light dark')
+    meta(name='format-detection', content='telephone=no, email=no, address=no')
+    link(rel='preconnect', href='https://fonts.googleapis.com')
+    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
+    link(rel='stylesheet', href='/css/styles.css')
+    link(rel='icon', type='image/svg+xml', href='/favicon.svg')
+    title= title
+  body
+    include partials/header_short.pug
+    main
+      block content
+    include partials/footer.pug

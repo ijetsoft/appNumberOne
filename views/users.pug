@@ -1,0 +1,14 @@
+extends layout_short
+
+block content
+  h2= title
+  p Всего пользователей: #{totalCount}
+  if lst && lst.length
+    ul
+      each user in lst
+        li
+          strong= user.firstName
+          |  — #{user.email}
+          |   #{user.TIMESTAMP}
+  else
+    p Пользователей нет.

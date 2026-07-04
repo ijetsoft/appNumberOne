@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Страница регистрации пользователя для сайта Игоря Бутаковского.">
+    <meta name="author" content="Игорь Бутаковский">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#111827">
+    <meta name="color-scheme" content="light dark">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Регистрация — Игорь Бутаковский</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">Игорь Бутаковский</a>
+        <nav class="site-nav" aria-label="Главное меню">
+          <a href="index.html#about">Обо мне</a>
+          <a href="index.html#experience">Опыт</a>
+          <a href="index.html#portfolio">Портфолио</a>
+          <a href="index.html#gallery">Галерея</a>
+          <a href="index.html#contacts">Контакты</a>
+          <a href="register.html">Регистрация</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1>Список пользователей</h1>
+        {res.render}
+        <ul id="user-list">
+          <li>Загрузка...</li>
+        </ul>
+      </div>
+    </main>
+
+    <script src="/js/listUser.js"></script>
+    <script>
+      async function renderUsers() {
+        const container = document.getElementById('user-list');
+
+        try {
+          const url ='mongodb+srv://jetsoft:jetsoft2026@cluster0.w292r7w.mongodb.net/users'
+          
+          //const users = await getUsers(url,'');
+          const users = await getUserCloud();
+alert(users.length);
+          if (!users.length) {
+            container.innerHTML = '<li>Пользователи не найдены.</li>';
+            return;
+          }
+
+          container.innerHTML = users.map((user) => `
+            <li>
+              /* <strong>${user.firstName || ''} ${user.lastName || ''}</strong><br> */
+              <span>${user.email || ''}</span>
+            </li>
+          `).join('');
+        } catch (error) {
+          console.error('Ошибка при получении пользователей:', error);
+          container.innerHTML = '<li>Не удалось загрузить пользователей.</li>';
+        }
+      }
+
+      renderUsers();
+    </script>
+    
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Игорь Бутаковский. Все права сохранены.</p>
+      </div>
+    </footer>
+
+    
+  </body>
+</html>

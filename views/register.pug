@@ -1,0 +1,34 @@
+extends layout_short
+
+block content
+  section.section.register
+    .container
+      h1 Регистрация
+      p Зарегистрируйтесь, чтобы получать новости о проектах и специальные предложения.
+      form.register-form(action='#', method='post')
+        .form-grid
+          label
+            span Имя
+            input(
+              type='text',
+              name='firstName',
+              placeholder='Иван',
+              required,
+              pattern='^[А-ЯЁа-яёA-Za-z\\s-]+$',
+              title='Имя не должно содержать цифр'
+            )
+          label
+            span Фамилия
+            input(
+              type='text',
+              name='lastName',
+              placeholder='Иванов',
+              required,
+              pattern='^[А-ЯЁа-яёA-Za-z\\s-]+$',
+              title='Фамилия не должна содержать цифр'
+            )
+          label.full-width
+            span Email
+            input(type='email', name='email', placeholder='ivan@example.com', required)
+        button.button.button-primary(type='submit') Зарегистрироваться
+        .form-message(aria-live='polite')

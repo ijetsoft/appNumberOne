@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Страница регистрации пользователя для сайта Игоря Бутаковского.">
+    <meta name="author" content="Игорь Бутаковский">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#111827">
+    <meta name="color-scheme" content="light dark">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Регистрация — Игорь Бутаковский</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">Игорь Бутаковский</a>
+        <nav class="site-nav" aria-label="Главное меню">
+          <a href="index.html#about">Обо мне</a>
+          <a href="index.html#experience">Опыт</a>
+          <a href="index.html#portfolio">Портфолио</a>
+          <a href="index.html#gallery">Галерея</a>
+          <a href="index.html#contacts">Контакты</a>
+          <a href="register.html">Регистрация</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section register">
+        <div class="container">
+          <h1>Регистрация</h1>
+          <p>Зарегистрируйтесь, чтобы получать новости о проектах и специальные предложения.</p>
+          <form class="register-form" action="#" method="post">
+            <div class="form-grid">
+              <label>
+                <span>Имя</span>
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="Иван"
+                  required
+                  pattern="^[А-ЯЁа-яёA-Za-z\s-]+$"
+                  title="Имя не должно содержать цифр"
+                >
+              </label>
+              <label>
+                <span>Фамилия</span>
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Иванов"
+                  required
+                  pattern="^[А-ЯЁа-яёA-Za-z\s-]+$"
+                  title="Фамилия не должна содержать цифр"
+                >
+              </label>
+              <label class="full-width">
+                <span>Email</span>
+                <input type="email" name="email" placeholder="ivan@example.com" required>
+              </label>
+            </div>
+            <button class="button button-primary" type="submit">Зарегистрироваться</button>
+            <div class="form-message" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Игорь Бутаковский. Все права сохранены.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

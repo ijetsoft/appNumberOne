@@ -1,0 +1,74 @@
+extends layout
+
+block content
+  section#home.hero
+    .container
+      p.eyebrow Веб-разработка | UX | адаптивные интерфейсы
+      h1 Привет, я Игорь Бутаковский
+        br
+        | развиваю сайты, которые работают.
+      p Чистый код, понятные интерфейсы и современные решения для бизнеса, стартапов и личных проектов.
+      .hero-actions
+        a.button.button-primary(href='#portfolio') Смотреть портфолио
+        a.button.button-secondary(href='#contacts') Написать мне
+
+  section#about.section.about
+    .container
+      h2 Обо мне
+      p Я веб-разработчик с акцентом на фронтенд и полное сопровождение сайтов на HTML, CSS и JavaScript. Создаю адаптивные посадочные страницы, корпоративные сайты и веб-приложения.
+
+  section#experience.section.experience
+    .container
+      h2 Опыт
+      .experience-grid
+        article
+          h3 10+ лет
+          p в разработке сайтов, лендингов и e-commerce решений.
+        article
+          h3 100+ проектов
+          p от визиток до масштабных корпоративных порталов и интернет-магазинов.
+        article
+          h3 Адаптивные интерфейсы
+          p выполняю точную вёрстку, оптимизирую скорость и мобильный UX.
+
+  section#portfolio.section.portfolio
+    .container
+      h2 Портфолио
+      p Шаблонные ссылки на ключевые проекты и демонстрации сайтов.
+      ul.portfolio-list
+        li
+          a(href='#', target='_blank', rel='noopener') Бизнес-сайт для компании
+        li
+          a(href='#', target='_blank', rel='noopener') Интернет-магазин
+        li
+          a(href='#', target='_blank', rel='noopener') Лендинг для продукта
+
+  section#gallery.section.gallery
+    .container
+      h2 Галерея сайтов
+      p Примеры визуальных решений и макетов, выполненных в разных стилях.
+      .gallery-grid
+        article.gallery-item
+          .gallery-preview Проект 1
+          h3 Корпоративный сайт
+        article.gallery-item
+          .gallery-preview Проект 2
+          h3 Лендинг
+        article.gallery-item
+          .gallery-preview Проект 3
+          h3 Интернет-магазин
+
+  section#contacts.section.contacts
+    .container
+      h2 Контакты
+      p Готов обсудить ваш проект и предложить оптимальное решение.
+      ul.contact-list
+        li Email:
+          a(href='mailto:info@example.com') info@example.com
+        li Телефон:
+          a(href='tel:+71234567890') +7 (123) 456-78-90
+      .social-links(aria-label='Социальные сети')
+        a(href='#', target='_blank', rel='noopener') LinkedIn
+        a(href='#', target='_blank', rel='noopener') GitHub
+        a(href='#', target='_blank', rel='noopener') Telegram
+  
